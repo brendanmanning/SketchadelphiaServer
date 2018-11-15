@@ -13,7 +13,6 @@ public class PDDConfig {
     }
     private PDDConfig() {}
 
-<<<<<<< HEAD
     //public File PhillyCrimeDataCsv = new File("/Users/Pharoah610/PDD/assets/PhillyCrimeDataIncidents.csv");
    // public File FullPhillyCrimeDataCsv = new File("/Users/Pharoah610/PDD/assets/FullPhillyCrimeDataIncidents.csv");
     //File MapViewTemplate = new File("/Users/Pharoah610/PDD/assets/MapViewTemple.html");
@@ -24,11 +23,6 @@ public class PDDConfig {
 
     File MapViewTemplate = new File("/root/MapViewTemple.html");
     File MapViewOutputDirectory = new File("/root/maps/");
-=======
-    File PhillyCrimeDataCsv = new File("/Users/Pharoah610/PDD/assets/PhillyCrimeDataIncidents.csv");
-    File MapViewTemplate = new File("/Users/Pharoah610/PDD/assets/MapViewTemple.html");
-    File MapViewOutputDirectory = new File("/Users/Pharoah610/Documents/PDDMaps/");
->>>>>>> parent of 11f2dfe... VERSION 1.0.0
 
     public SimpleDateFormat PhillyCrimeDataDateFormat = new SimpleDateFormat("y-MM-dd HH:mm:ss");
 
