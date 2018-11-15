@@ -62,7 +62,7 @@ public class Main {
             // Fill the response
             return responseJSON;
         });
-<<<<<<< HEAD
+
 
         // Enable CORS from the client website
         options("/*", (request, response) -> {
@@ -92,7 +92,6 @@ public class Main {
 
         // Preprocess requests
         before((request, response) -> response.header("Access-Control-Allow-Origin", "*"));
-=======
->>>>>>> parent of 11f2dfe... VERSION 1.0.0
+
     }
 }
