@@ -8,6 +8,7 @@ package com.brendanmanning.SketchadelphiaServer;
 import com.brendanmanning.PhillyDillyDilly.Grid;
 import com.google.gson.*;
 import com.sun.corba.se.spi.legacy.connection.LegacyServerSocketEndPointInfo;
+import javafx.scene.layout.GridPane;
 
 import java.util.HashSet;
 import java.util.Iterator;
@@ -17,6 +18,7 @@ public class Route {
     JsonObject routeJson = null;
 
     Leg[] legs = null;
+    HashSet<Grid> grids = new HashSet<Grid>();
 
     public Route(JsonObject routeJson) {
 
@@ -26,8 +28,8 @@ public class Route {
         legs = new Leg[routeLegs.size()];
         for(int l = 0; l < routeLegs.size(); l++) {
             legs[l] = new Leg(routeLegs.get(l).getAsJsonObject());
+            grids.addAll(legs[l].gridsCrossed());
         }
-
 
     }
 
@@ -37,6 +39,10 @@ public class Route {
             reportedIncidents += legs[i].numberOfIncidents();
         }
         return reportedIncidents;
+    }
+
+    public Grid[] getGrids() {
+        return grids.toArray(new Grid[]{});
     }
 
     // Used only for testing

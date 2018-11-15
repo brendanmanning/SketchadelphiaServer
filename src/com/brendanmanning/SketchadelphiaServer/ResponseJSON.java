@@ -108,6 +108,11 @@ public class ResponseJSON {
     }
 
     public String toString() {
+
+        Gson gson = new Gson();
+        gson.toJson(route.getGrids());
+        gson.toJsonTree(route.getGrids());
+
         JsonObject json = new JsonObject();
         json.addProperty("success", success);
         json.addProperty("message", message);
@@ -118,7 +123,7 @@ public class ResponseJSON {
         json.addProperty("averageIncidentsPerGrid", averageIncidentsPerGrid);
         json.addProperty("maxIncidentsInAGrid", maxIncidentsInAGrid);
         json.addProperty("reportedIncidents", reportedIncidents);
-        json.add("grids", route.routeJson);
+        json.add("grids", gson.toJsonTree(route.getGrids()));
         json.add("googleResponse", new Gson().fromJson(googleResponse.toString(), JsonElement.class));
         return json.toString();
     }
