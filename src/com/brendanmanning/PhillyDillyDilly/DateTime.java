@@ -37,4 +37,8 @@ public class DateTime extends Date {
         calendar.setTime(this);
         return calendar.get(Calendar.DAY_OF_MONTH);
     }
+
+    public String toString() {
+        return month() + "/" + day() + "/" + year();
+    }
 }

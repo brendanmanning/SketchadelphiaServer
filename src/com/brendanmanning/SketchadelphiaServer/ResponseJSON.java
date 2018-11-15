@@ -23,6 +23,7 @@ public class ResponseJSON {
     private double blockHeight = 0;
 
     private int averageIncidentsPerGrid = 0;
+    private int maxIncidentsInAGrid = 0;
 
     private int reportedIncidents = 0;
     private int startDate = 0;
@@ -61,6 +62,8 @@ public class ResponseJSON {
 
     public int getAverageIncidentsPerGrid() { return this.averageIncidentsPerGrid; }
 
+    public int getMaxIncidentsInAGrid() { return this.maxIncidentsInAGrid; }
+
     public int getReportedIncidents() {
         return this.reportedIncidents;
     }
@@ -95,6 +98,8 @@ public class ResponseJSON {
 
     public void setAverageIncidentsPerGrid(int avg) { this.averageIncidentsPerGrid = avg; }
 
+    public void setMaxIncidentsInAGrid(int max) { this.maxIncidentsInAGrid = max; }
+
     public void setReportedIncidents(int reportedIncidents) {
         this.reportedIncidents = reportedIncidents;
     }
@@ -108,6 +113,7 @@ public class ResponseJSON {
         json.addProperty("blockHeight", blockHeight);
         json.addProperty("blockWidth", blockWidth);
         json.addProperty("averageIncidentsPerGrid", averageIncidentsPerGrid);
+        json.addProperty("maxIncidentsInAGrid", maxIncidentsInAGrid);
         json.addProperty("reportedIncidents", reportedIncidents);
         json.add("googleResponse", new Gson().fromJson(googleResponse.toString(), JsonElement.class));
         return json.toString();

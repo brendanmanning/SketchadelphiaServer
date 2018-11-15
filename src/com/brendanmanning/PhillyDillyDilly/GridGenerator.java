@@ -36,6 +36,7 @@ public class GridGenerator {
     double blockWidth = 0;
 
     private int averageIncidentsPerGrid = -1;
+    private int maxIncidentsInAGrid = -1;
 
     public int getGRIDS_EW() {
         return this.GRIDS_EW;
@@ -54,6 +55,8 @@ public class GridGenerator {
     }
 
     public int getAverageIncidentsPerGrid() { return averageIncidentsPerGrid; }
+
+    public int getMaxIncidentsInAGrid() { return maxIncidentsInAGrid; }
 
     public Grid[][] getGrids(List<Incident> incidents) {
 
@@ -154,14 +157,21 @@ public class GridGenerator {
 
         // Calculate the number of grids with no incidents reported (those outside philadelphia city limits)
         int zeroGrids = 0;
-        for(int y = 0; y < grids.length; y++)
-            for(int x = 0; x < grids[y].length; x++)
-                if(grids[y][x].numberOfIncidents() == 0)
+        int maxInAGrid = 0;
+        for(int y = 0; y < grids.length; y++) {
+            for (int x = 0; x < grids[y].length; x++) {
+                if (grids[y][x].numberOfIncidents() == 0) {
                     zeroGrids++;
+                }
+                if (grids[y][x].numberOfIncidents() > maxInAGrid) {
+                    maxInAGrid = grids[y][x].numberOfIncidents();
+                }
+            }
+        }
 
         // Calculate the average number of incidents per grid
         averageIncidentsPerGrid = ( incidents.size() - badIncidents.size() ) / ( (getGRIDS_EW() * getGRIDS_NS()) - zeroGrids );
-
+        maxIncidentsInAGrid = maxInAGrid;
 
 
         if(failed) {
