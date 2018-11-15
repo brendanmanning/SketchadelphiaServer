@@ -20,6 +20,10 @@ public class Main {
 
     public static void main(String[] args) {
 
+        // Configure Spark
+        port(80);
+        before((request, response) -> response.header("Access-Control-Allow-Origin", "*"));
+
         com.brendanmanning.PhillyDillyDilly.Main.main(new String[]{});
         System.out.println("Starting server...");
 
@@ -89,9 +93,6 @@ public class Main {
 
             return responseJSON;
         });
-
-        // Preprocess requests
-        before((request, response) -> response.header("Access-Control-Allow-Origin", "*"));
 
     }
 }
