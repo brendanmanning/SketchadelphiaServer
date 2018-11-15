@@ -32,7 +32,6 @@ public class Main {
         System.out.println("Loading data into memory...");
         try (BufferedReader br = new BufferedReader(new FileReader( PDDConfig.getInstance().PhillyCrimeDataCsv ))) {
             for(String line; (line = br.readLine()) != null; ) {
-                System.out.println(line);
                 try {
                     incidents.add(new Incident(line));
                 } catch (MalformedIncidentException mie) {
