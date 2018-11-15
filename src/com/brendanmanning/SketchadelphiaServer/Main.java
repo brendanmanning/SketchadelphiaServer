@@ -50,6 +50,7 @@ public class Main {
                 responseJSON.setBlockHeight(GridGenerator.getInstance().getBlockHeight());
                 responseJSON.setBlockWidth(GridGenerator.getInstance().getBlockWidth());
                 responseJSON.setAverageIncidentsPerGrid(GridGenerator.getInstance().getAverageIncidentsPerGrid());
+                responseJSON.setMaxIncidentsInAGrid(GridGenerator.getInstance().getMaxIncidentsInAGrid());
                 responseJSON.setGRIDS_NS(GridGenerator.getInstance().getGRIDS_NS());
                 responseJSON.setGRIDS_EW(GridGenerator.getInstance().getGRIDS_EW());
                 responseJSON.setGoogleResponse(GoogleMaps.getInstance().getLastResponse());
