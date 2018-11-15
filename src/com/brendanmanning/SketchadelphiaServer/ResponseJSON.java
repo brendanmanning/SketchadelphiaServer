@@ -14,6 +14,8 @@ public class ResponseJSON {
     private boolean success = false;
     private String message = "";
 
+    private Route route;
+
     private JsonObject googleResponse = null;
 
     private int GRIDS_EW = 0;
@@ -29,7 +31,8 @@ public class ResponseJSON {
     private int startDate = 0;
 
 
-    public ResponseJSON() {
+    public ResponseJSON(Route r) {
+        route = r;
     }
 
     public boolean getSuccess() {
@@ -115,6 +118,7 @@ public class ResponseJSON {
         json.addProperty("averageIncidentsPerGrid", averageIncidentsPerGrid);
         json.addProperty("maxIncidentsInAGrid", maxIncidentsInAGrid);
         json.addProperty("reportedIncidents", reportedIncidents);
+        json.add("grids", route.routeJson);
         json.add("googleResponse", new Gson().fromJson(googleResponse.toString(), JsonElement.class));
         return json.toString();
     }

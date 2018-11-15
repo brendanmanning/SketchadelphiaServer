@@ -32,7 +32,7 @@ public class Main {
             String from = request.queryParams("from");
             String to = request.queryParams("to");
             Route route = null;
-            ResponseJSON responseJSON = new ResponseJSON();
+            ResponseJSON responseJSON = new ResponseJSON(null);
 
 
             // Make sure all URL parameters filled
@@ -45,6 +45,7 @@ public class Main {
 
                 route = GoogleMaps.getInstance().getRoute(from, to);
 
+                responseJSON = new ResponseJSON(route);
                 responseJSON.setSuccess(true);
                 responseJSON.setMessage("Sketchadelphia request successful.");
                 responseJSON.setBlockHeight(GridGenerator.getInstance().getBlockHeight());
@@ -88,7 +89,7 @@ public class Main {
         internalServerError((req, res) -> {
             res.type("application/json");
 
-            ResponseJSON responseJSON = new ResponseJSON();
+            ResponseJSON responseJSON = new ResponseJSON(null);
             responseJSON.setSuccess(false);
             responseJSON.setMessage("Invalid starting or ending location.");
 
