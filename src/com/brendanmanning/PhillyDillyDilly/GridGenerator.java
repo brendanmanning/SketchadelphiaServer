@@ -5,10 +5,7 @@ import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * PDD
@@ -35,6 +32,7 @@ public class GridGenerator {
     double blockHeight = 0;
     double blockWidth = 0;
 
+    private int emptyGrids = 0;
     private int averageIncidentsPerGrid = -1;
     private int maxIncidentsInAGrid = -1;
 
@@ -58,6 +56,13 @@ public class GridGenerator {
 
     public int getMaxIncidentsInAGrid() { return maxIncidentsInAGrid; }
 
+    /**
+     * Creates a 2D array of grids from the given incidents
+     * Typically CALLED ONLY ONCE in PhillyDillyDilly.Main
+     *
+     * As such, this method acts as a sort of "Constructor" for the GridGenerator singleton.
+     *
+     */
     public Grid[][] getGrids(List<Incident> incidents) {
 
 
@@ -89,10 +94,10 @@ public class GridGenerator {
         // Calculate the coordinate offset applied to each successive grid
         // 73.000 -> 73.015 -> 73.030 with with each movement right
 
-        System.out.print("Extreme north: ");
-        System.out.println(extremeNorth);
-        System.out.print("Extreme south: ");
-        System.out.println(extremeSouth);
+        //System.out.print("Extreme north: ");
+        //System.out.println(extremeNorth);
+        //System.out.print("Extreme south: ");
+        //System.out.println(extremeSouth);
 
         coordinateDistanceNS = Math.abs(extremeNorth.getLat() - extremeSouth.getLat());
         coordinateDistanceEW = Math.abs(extremeEast.getLon() - extremeWest.getLon());
@@ -100,15 +105,15 @@ public class GridGenerator {
         blockWidth = coordinateDistanceEW / GRIDS_EW;
 
         // Debug
-        System.out.println("Extreme North: " + extremeNorth);
-        System.out.println("Extreme South: " + extremeSouth);
-        System.out.println("Extreme East: " + extremeEast);
-        System.out.println("Extreme West: " + extremeWest);
+        //System.out.println("Extreme North: " + extremeNorth);
+        //System.out.println("Extreme South: " + extremeSouth);
+        //System.out.println("Extreme East: " + extremeEast);
+        //System.out.println("Extreme West: " + extremeWest);
 
-        System.out.println();
+        //System.out.println();
 
-        System.out.println("Block Coordinate Size NS: " + blockHeight);
-        System.out.println("Block Coordinate Size EW: " + blockWidth);
+        //System.out.println("Block Coordinate Size NS: " + blockHeight);
+        //System.out.println("Block Coordinate Size EW: " + blockWidth);
 
         // Generate the grids in memory
         for(int y = 0; y < GRIDS_NS; y++) {
@@ -156,21 +161,21 @@ public class GridGenerator {
         }
 
         // Calculate the number of grids with no incidents reported (those outside philadelphia city limits)
-        int zeroGrids = 0;
+        emptyGrids = 0;
         int maxInAGrid = 0;
         for(int y = 0; y < grids.length; y++) {
             for (int x = 0; x < grids[y].length; x++) {
                 if (grids[y][x].numberOfIncidents() == 0) {
-                    zeroGrids++;
+                    emptyGrids++;
                 }
                 if (grids[y][x].numberOfIncidents() > maxInAGrid) {
-                    maxInAGrid = grids[y][x].numberOfIncidents();
+                    emptyGrids = grids[y][x].numberOfIncidents();
                 }
             }
         }
 
         // Calculate the average number of incidents per grid
-        averageIncidentsPerGrid = ( incidents.size() - badIncidents.size() ) / ( (getGRIDS_EW() * getGRIDS_NS()) - zeroGrids );
+        averageIncidentsPerGrid = ( incidents.size() - badIncidents.size() ) / ( (getGRIDS_EW() * getGRIDS_NS()) - emptyGrids );
         maxIncidentsInAGrid = maxInAGrid;
 
 
@@ -262,5 +267,38 @@ public class GridGenerator {
 
         return new int[]{(int) Math.round(y),(int) Math.round(x)};
         */
+    }
+
+    private int[] getPercentiles(Grid[][] grids, double[] percentiles) {
+
+        // Keep track of the number of reported incidents in each grid
+        // This allows us to calculate percentiles in the dataset
+        //   * Ascending order
+        //   * Excluding zero-size grids
+        TreeSet<Integer> reportedIncidentsCount = new TreeSet<Integer>();
+
+        // Calculate the number of incidents in each grid (excluding zero-grids)
+        for(int y = 0; y < grids.length; y++) {
+            for(int x = 0; x < grids[y].length; x++) {
+                if(grids[y][x].numberOfIncidents() == 0)
+                    continue;
+                reportedIncidentsCount.add(grids[y][x].numberOfIncidents());
+            }
+        }
+
+        // Store each requested percentile offset in an array
+        int[] percentileIndexes = new int[percentiles.length];
+
+        for(int p = 0; p < percentiles.length; p++) {
+            double percentile = percentiles[p];
+
+            //int index = percentile * reportedIncidentsCount.size();
+
+
+
+        }
+
+        return percentileIndexes;
+
     }
 }

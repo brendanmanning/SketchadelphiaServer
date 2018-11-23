@@ -24,6 +24,7 @@ public class Main {
         port(80);
         before((request, response) -> response.header("Access-Control-Allow-Origin", "*"));
 
+
         com.brendanmanning.PhillyDillyDilly.Main.main(new String[]{});
         System.out.println("Starting server...");
 
