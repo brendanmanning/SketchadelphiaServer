@@ -296,7 +296,7 @@ public class GridGenerator {
 
         System.out.println("-----------------");
         for(int i = 0; i < reportedIncidentsCount.size(); i++) {
-            System.out.print(reportedIncidentsCount.get(i));
+            System.out.print(reportedIncidentsCount.get(i) + ",");
         }
 
         // Store each requested percentile offset in an array
