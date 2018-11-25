@@ -1,5 +1,6 @@
 package com.brendanmanning.PhillyDillyDilly;
 
+import com.brendanmanning.PhillyDillyDillyHelpers.PDDMath;
 import com.google.gson.JsonObject;
 import org.apache.commons.io.FileUtils;
 
@@ -179,7 +180,7 @@ public class GridGenerator {
         maxIncidentsInAGrid = maxInAGrid;
 
 
-        getPercentiles(grids, new double[]{0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9});
+        getPercentiles(grids, new double[]{0.1,0.2,0.3,0.4,0.5,0.6,0.63,0.7,0.8,0.9});
 
 
         if(failed) {
@@ -305,9 +306,16 @@ public class GridGenerator {
         for(int p = 0; p < percentiles.length; p++) {
             double percentile = percentiles[p];
 
-            double index = percentile * reportedIncidentsCount.size();
+            double indx = percentile * reportedIncidentsCount.size();
+            int index = 0;
 
-            System.out.println("reportedIncidentsCount[" + index + "] = " + (int) reportedIncidentsCount.get((int)index));
+            if(PDDMath.getInstance().isWholeNumber(indx)) {
+                index = (int) indx;
+            } else {
+                index = (int) Math.ceil(indx);
+            }
+
+            System.out.println((percentile * 100) + "th percentile is " + reportedIncidentsCount.get(index));
 
         }
 
