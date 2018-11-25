@@ -22,11 +22,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        CsvTrimmer csvTrimmer = new CsvTrimmer(PDDConfig.getInstance().FullPhillyCrimeDataCsv, PDDConfig.getInstance().PhillyCrimeDataCsv);
+        /*CsvTrimmer csvTrimmer = new CsvTrimmer(PDDConfig.getInstance().FullPhillyCrimeDataCsv, PDDConfig.getInstance().PhillyCrimeDataCsv);
         csvTrimmer.startingAt(2018);
 
         System.out.println("Path");
-        System.out.println(PDDConfig.getInstance().PhillyCrimeDataCsv.getAbsolutePath());
+        System.out.println(PDDConfig.getInstance().PhillyCrimeDataCsv.getAbsolutePath());*/
 
         // Load the data into the array
         System.out.println("Loading data into memory...");
