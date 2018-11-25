@@ -29,11 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PDDConfig.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PDDConfig.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/brendanmanning/PhillyDillyDilly/PDDConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+            <state relative-caret-position="294">
+              <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -71,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GridGenerator.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GridGenerator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/brendanmanning/PhillyDillyDilly/GridGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="183" column="0" lean-forward="true" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
+            <state relative-caret-position="339">
+              <caret line="188" column="46" lean-forward="true" selection-start-line="188" selection-start-column="46" selection-end-line="188" selection-end-column="46" />
               <folding>
                 <element signature="method#generateGridFiles#0;class#GridGenerator#0" expanded="false" />
                 <element signature="method#getGridIndex#0;class#GridGenerator#0" expanded="false" />
@@ -162,10 +162,10 @@
         <option value="$PROJECT_DIR$/src/com/brendanmanning/SketchadelphiaServer/ResponseJSON.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/brendanmanning/SketchadelphiaServer/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/brendanmanning/PhillyDillyDilly/PDDConfig.java" />
         <option value="$PROJECT_DIR$/src/com/brendanmanning/PhillyDillyDillyHelpers/PDDMath.java" />
         <option value="$PROJECT_DIR$/src/com/brendanmanning/PhillyDillyDillyTests/PDDMathTest.java" />
         <option value="$PROJECT_DIR$/src/com/brendanmanning/PhillyDillyDilly/GridGenerator.java" />
+        <option value="$PROJECT_DIR$/src/com/brendanmanning/PhillyDillyDilly/PDDConfig.java" />
       </list>
     </option>
   </component>
@@ -567,7 +567,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924962" sideWeight="0.8812601" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32819724" sideWeight="0.40831295" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32819724" sideWeight="0.40831295" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32819724" sideWeight="0.591687" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33441034" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -664,14 +664,6 @@
     <entry file="file://$PROJECT_DIR$/src/com/brendanmanning/SketchadelphiaServer/Leg.java" />
     <entry file="file://$PROJECT_DIR$/src/com/brendanmanning/PhillyDillyDilly/Grid.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/brendanmanning/SketchadelphiaServer/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/brendanmanning/PhillyDillyDilly/PDDConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/brendanmanning/SketchadelphiaServer/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -737,13 +729,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/brendanmanning/PhillyDillyDilly/GridGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="183" column="0" lean-forward="true" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
+        <state relative-caret-position="339">
+          <caret line="188" column="46" lean-forward="true" selection-start-line="188" selection-start-column="46" selection-end-line="188" selection-end-column="46" />
           <folding>
             <element signature="method#generateGridFiles#0;class#GridGenerator#0" expanded="false" />
             <element signature="method#getGridIndex#0;class#GridGenerator#0" expanded="false" />
             <element signature="e#10584#10593#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/brendanmanning/PhillyDillyDilly/PDDConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
