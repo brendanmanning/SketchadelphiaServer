@@ -37,6 +37,8 @@ public class GridGenerator {
     private int averageIncidentsPerGrid = -1;
     private int maxIncidentsInAGrid = -1;
 
+    private static Percentile[] percentiles = null;
+
     public int getGRIDS_EW() {
         return this.GRIDS_EW;
     }
@@ -179,8 +181,8 @@ public class GridGenerator {
         averageIncidentsPerGrid = ( incidents.size() - badIncidents.size() ) / ( (getGRIDS_EW() * getGRIDS_NS()) - emptyGrids );
         maxIncidentsInAGrid = maxInAGrid;
 
-
-        getPercentiles(grids, new double[]{0.1,0.2,0.3,0.4,0.5,0.6,0.63,0.7,0.8,0.9});
+        // Calculate the 10th-90th percentile
+        percentiles = generatePercentiles(grids, new int[]{10,20,30,40,50,60,70,80,90});
 
 
         if(failed) {
@@ -273,7 +275,14 @@ public class GridGenerator {
         */
     }
 
-    public int[] getPercentiles(Grid[][] grids, double[] percentiles) {
+    /**
+     * Calculate the crime concentration (Ex. 10 crimes/grid) percentiles for the dataset
+     *
+     * @param grids The grids in the dataset
+     * @param percentiles The percentiles to calculate (Ex. [10,20,30] --> 10th, 20th, and 30th percentiles calculated)
+     * @return Percentile objects (10th percentile == 1000 crimes pair)
+     */
+    public Percentile[] generatePercentiles(Grid[][] grids, int[] percentiles) {
 
         // Keep track of the number of reported incidents in each grid
         // This allows us to calculate percentiles in the dataset
@@ -301,10 +310,10 @@ public class GridGenerator {
         }
 
         // Store each requested percentile offset in an array
-        int[] percentileIndexes = new int[percentiles.length];
+        Percentile[] percentileObjects = new Percentile[percentiles.length];
 
         for(int p = 0; p < percentiles.length; p++) {
-            double percentile = percentiles[p];
+            double percentile = percentiles[p] / 100;
 
             double indx = percentile * reportedIncidentsCount.size();
             int index = 0;
@@ -315,11 +324,19 @@ public class GridGenerator {
                 index = (int) Math.ceil(indx);
             }
 
-            System.out.println((percentile * 100) + "th percentile is " + reportedIncidentsCount.get(index));
+            percentileObjects[p] = new Percentile(percentiles[p],  reportedIncidentsCount.get(index));
 
         }
 
-        return percentileIndexes;
+        return percentileObjects;
 
+    }
+
+    /**
+     * Get the crime concentration (Ex. 10 crimes/grid) percentiles for the dataset
+     * @return Percentile objects (10th percentile == 1000 crimes pair)
+     */
+    public Percentile[] getPercentiles() {
+        return percentiles;
     }
 }
