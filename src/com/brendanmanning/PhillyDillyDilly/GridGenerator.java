@@ -278,7 +278,7 @@ public class GridGenerator {
         // This allows us to calculate percentiles in the dataset
         //   * Ascending order
         //   * Excluding zero-size grids
-        TreeSet<Integer> reportedIncidentsCount = new TreeSet<Integer>();
+        ArrayList<Integer> reportedIncidentsCount = new ArrayList<Integer>();
 
         // Calculate the number of incidents in each grid (excluding zero-grids)
         System.out.println();
@@ -291,6 +291,14 @@ public class GridGenerator {
             }
         }
 
+
+        Collections.sort(reportedIncidentsCount);
+
+        System.out.println("-----------------");
+        for(int i = 0; i < reportedIncidentsCount.size(); i++) {
+            System.out.print(reportedIncidentsCount.get(i));
+        }
+
         // Store each requested percentile offset in an array
         int[] percentileIndexes = new int[percentiles.length];
 
@@ -299,7 +307,7 @@ public class GridGenerator {
 
             double index = percentile * reportedIncidentsCount.size();
 
-            System.out.println("reportedIncidentsCount[" + index + "] = " + (int) reportedIncidentsCount.toArray()[(int)index]);
+            System.out.println("reportedIncidentsCount[" + index + "] = " + (int) reportedIncidentsCount.get((int)index));
 
         }
 
