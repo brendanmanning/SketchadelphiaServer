@@ -45,7 +45,7 @@ class GridGeneratorTest {
 
         // Set the number of incidents
         // ... Pattern is
-        grids[0].addIncident(new Incident(""));
+        //grids[0].addIncident(new Incident(""));
 
     }
 
