@@ -7,8 +7,6 @@ package com.brendanmanning.SketchadelphiaServer;
 
 import com.brendanmanning.PhillyDillyDilly.Grid;
 import com.google.gson.*;
-import com.sun.corba.se.spi.legacy.connection.LegacyServerSocketEndPointInfo;
-import javafx.scene.layout.GridPane;
 
 import java.util.HashSet;
 import java.util.Iterator;
