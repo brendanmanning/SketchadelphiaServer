@@ -5,4 +5,4 @@ language: java
 jdk: openjdk8
 
 before_install:
-- wget https://github.com/brendanmanning/SketchadelphiaServer/blob/master/assets/PhillyCrimeDataIncidents.csv?raw=true -O /root/PhillyCrimeDataIncidents.csv
+- sudo wget https://github.com/brendanmanning/SketchadelphiaServer/blob/master/assets/PhillyCrimeDataIncidents.csv?raw=true -O /root/PhillyCrimeDataIncidents.csv
