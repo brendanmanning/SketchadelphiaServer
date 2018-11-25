@@ -179,6 +179,9 @@ public class GridGenerator {
         maxIncidentsInAGrid = maxInAGrid;
 
 
+        getPercentiles(grids, new double[]{0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9});
+
+
         if(failed) {
             System.exit(0);
         }
@@ -292,9 +295,9 @@ public class GridGenerator {
         for(int p = 0; p < percentiles.length; p++) {
             double percentile = percentiles[p];
 
-            //int index = percentile * reportedIncidentsCount.size();
+            double index = percentile * reportedIncidentsCount.size();
 
-
+            System.out.println("Index p=" + p + " is " + index);
 
         }
 
