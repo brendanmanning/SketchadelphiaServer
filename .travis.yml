@@ -6,3 +6,6 @@ jdk: openjdk8
 
 before_install:
 - sudo wget https://github.com/brendanmanning/SketchadelphiaServer/blob/master/assets/PhillyCrimeDataIncidents.csv?raw=true -O /root/PhillyCrimeDataIncidents.csv
+
+script:
+- sudo /usr/local/maven/bin/mvn clean package
