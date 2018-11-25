@@ -297,7 +297,7 @@ public class GridGenerator {
 
             double index = percentile * reportedIncidentsCount.size();
 
-            System.out.println("Index p=" + p + " is " + index);
+            System.out.println("Index p=" + p + " is " + (int) reportedIncidentsCount.toArray()[(int)index]);
 
         }
 
