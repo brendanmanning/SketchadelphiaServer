@@ -237,7 +237,7 @@ public class Main {
             System.out.println(PDDConfig.getInstance().MapViewOutputDirectory.getAbsolutePath() + File.separator + mapName + ".html");
             FileUtils.writeStringToFile(new File(PDDConfig.getInstance().MapViewOutputDirectory.getAbsolutePath() + File.separator + mapName + ".html"), template);
         } catch (IOException ioe) {
-
+            System.out.println("Error generating map!");
         }
     }
 
@@ -265,7 +265,7 @@ public class Main {
             System.out.println(PDDConfig.getInstance().MapViewOutputDirectory.getAbsolutePath() + File.separator + mapName + ".html");
             FileUtils.writeStringToFile(new File(PDDConfig.getInstance().MapViewOutputDirectory.getAbsolutePath() + File.separator + mapName + ".html"), template);
         } catch (IOException ioe) {
-
+            System.out.println("Error generating map!");
         }
     }
 
@@ -290,7 +290,7 @@ public class Main {
             System.out.println(PDDConfig.getInstance().MapViewOutputDirectory.getAbsolutePath() + File.separator + mapName + ".html");
             FileUtils.writeStringToFile(new File(PDDConfig.getInstance().MapViewOutputDirectory.getAbsolutePath() + File.separator + mapName + ".html"), template);
         } catch (IOException ioe) {
-
+            System.out.println("Error generating map!");
         }
     }
 
@@ -309,7 +309,7 @@ public class Main {
             System.out.println(PDDConfig.getInstance().MapViewOutputDirectory.getAbsolutePath() + File.separator + mapName + ".html");
             FileUtils.writeStringToFile(new File(PDDConfig.getInstance().MapViewOutputDirectory.getAbsolutePath() + File.separator + mapName + ".html"), template);
         } catch (IOException ioe) {
-
+            System.out.println("Error generating map!");
         }
     }
 

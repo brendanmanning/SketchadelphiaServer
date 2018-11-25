@@ -273,7 +273,7 @@ public class GridGenerator {
         */
     }
 
-    private int[] getPercentiles(Grid[][] grids, double[] percentiles) {
+    public int[] getPercentiles(Grid[][] grids, double[] percentiles) {
 
         // Keep track of the number of reported incidents in each grid
         // This allows us to calculate percentiles in the dataset
