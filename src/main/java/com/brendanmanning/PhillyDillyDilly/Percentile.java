@@ -40,7 +40,7 @@ public class Percentile {
     public JsonObject toJson() {
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("percentile", percentile);
-        jsonObject.addProperty("upperbound", upperBound);
+        jsonObject.addProperty("upperBound", upperBound);
         return jsonObject;
     }
 }
