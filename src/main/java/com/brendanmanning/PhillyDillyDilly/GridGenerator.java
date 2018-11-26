@@ -320,6 +320,7 @@ public class GridGenerator {
                 index = (int) Math.ceil(indx);
             }
 
+            System.out.println("Percentile =  " + percentile);
             System.out.println("Index =  " + index);
 
             percentileObjects[p] = new Percentile(percentiles[p], reportedIncidentsCount.get(index));
