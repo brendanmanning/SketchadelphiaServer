@@ -298,6 +298,7 @@ public class GridGenerator {
                 if(grids[y][x].numberOfIncidents() == 0)
                     continue;
                 reportedIncidentsCount.add(grids[y][x].numberOfIncidents());
+                System.out.print(grids[y][x].numberOfIncidents() + ",");
             }
         }
 
@@ -320,15 +321,9 @@ public class GridGenerator {
                 index = (int) Math.ceil(indx);
             }
 
-            System.out.println("Percentile =  " + percentile);
-            System.out.println("Index =  " + index);
-
             percentileObjects[p] = new Percentile(percentiles[p], reportedIncidentsCount.get(index));
             System.out.println(percentileObjects[p].getLowerBound());
         }
-
-        System.out.println("Reported Incidents Count: " + reportedIncidentsCount.size());
-        System.out.println(percentiles);
 
         return percentileObjects;
 
