@@ -309,7 +309,7 @@ public class GridGenerator {
         Percentile[] percentileObjects = new Percentile[percentiles.length];
 
         for(int p = 0; p < percentiles.length; p++) {
-            double percentile = percentiles[p] / 100;
+            double percentile = percentiles[p] / 100.0;
 
             double indx = percentile * reportedIncidentsCount.size();
             int index = 0;
