@@ -30,8 +30,7 @@ public class ResponseJSON {
     private int averageIncidentsPerGrid = 0;
     private int maxIncidentsInAGrid = 0;
 
-    private Percentile[] percentiles = null;
-    private JsonArray[] percentilesJson = null;
+    private JsonArray percentiles = null;
 
     private int reportedIncidents = 0;
     private int startDate = 0;
@@ -71,7 +70,7 @@ public class ResponseJSON {
 
     public int getAverageIncidentsPerGrid() { return this.averageIncidentsPerGrid; }
 
-    public Percentile[] getPercentiles() { return this.percentiles; }
+    public JsonArray getPercentiles() { return this.percentiles; }
 
     public int getMaxIncidentsInAGrid() { return this.maxIncidentsInAGrid; }
 
@@ -109,7 +108,7 @@ public class ResponseJSON {
 
     public void setAverageIncidentsPerGrid(int avg) { this.averageIncidentsPerGrid = avg; }
 
-    public void setPercentiles(Percentile[] percentiles) { this.percentiles = percentiles; }
+    public void setPercentiles(JsonArray percentiles) { this.percentiles = percentiles; }
 
     public void setMaxIncidentsInAGrid(int max) { this.maxIncidentsInAGrid = max; }
 
@@ -131,7 +130,7 @@ public class ResponseJSON {
         json.addProperty("reportedIncidents", reportedIncidents);
         json.add("grids", new Gson().toJsonTree(route.getGrids()));
         json.add("googleResponse", new Gson().fromJson(googleResponse.toString(), JsonElement.class));
-        json.add("percentiles", GridGenerator.getInstance().getPercentilesJson());
+        json.add("percentiles", this.percentiles);
 
         return json.toString();
     }

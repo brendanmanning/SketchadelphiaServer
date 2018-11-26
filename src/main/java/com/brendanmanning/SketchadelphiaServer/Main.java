@@ -57,6 +57,7 @@ public class Main {
                 responseJSON.setGRIDS_EW(GridGenerator.getInstance().getGRIDS_EW());
                 responseJSON.setGoogleResponse(GoogleMaps.getInstance().getLastResponse());
                 responseJSON.setReportedIncidents(route.numberOfIncidents());
+                responseJSON.setPercentiles(GridGenerator.getInstance().getPercentilesJson());
 
             } catch (MalformedURLException mue) {
                 responseJSON.setSuccess(false);
