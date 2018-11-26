@@ -1,6 +1,7 @@
 package com.brendanmanning.PhillyDillyDilly;
 
 import com.brendanmanning.PhillyDillyDillyHelpers.PDDMath;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import org.apache.commons.io.FileUtils;
 
@@ -338,5 +339,18 @@ public class GridGenerator {
      */
     public Percentile[] getPercentiles() {
         return percentiles;
+    }
+
+    /**
+     * Get the crime concentration (Ex. 10 crimes/grid) percentiles for the dataset AS A JSON ARRAY
+     * @return Percentile objects (10th percentile == 1000 crimes pair)
+     */
+    public JsonArray getPercentilesJson() {
+        Percentile[] percentiles = getPercentiles();
+        JsonArray percentilesJson = new JsonArray();
+        for(int i = 0; i < percentiles.length; i++) {
+            percentilesJson.add(percentiles[i].toJson());
+        }
+        return percentilesJson;
     }
 }

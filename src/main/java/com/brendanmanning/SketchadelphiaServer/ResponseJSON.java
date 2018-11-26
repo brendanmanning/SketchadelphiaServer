@@ -1,6 +1,9 @@
 package com.brendanmanning.SketchadelphiaServer;
 
+import com.brendanmanning.PhillyDillyDilly.GridGenerator;
+import com.brendanmanning.PhillyDillyDilly.Percentile;
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
@@ -26,6 +29,9 @@ public class ResponseJSON {
 
     private int averageIncidentsPerGrid = 0;
     private int maxIncidentsInAGrid = 0;
+
+    private Percentile[] percentiles = null;
+    private JsonArray[] percentilesJson = null;
 
     private int reportedIncidents = 0;
     private int startDate = 0;
@@ -65,6 +71,8 @@ public class ResponseJSON {
 
     public int getAverageIncidentsPerGrid() { return this.averageIncidentsPerGrid; }
 
+    public Percentile[] getPercentiles() { return this.percentiles; }
+
     public int getMaxIncidentsInAGrid() { return this.maxIncidentsInAGrid; }
 
     public int getReportedIncidents() {
@@ -101,6 +109,8 @@ public class ResponseJSON {
 
     public void setAverageIncidentsPerGrid(int avg) { this.averageIncidentsPerGrid = avg; }
 
+    public void setPercentiles(Percentile[] percentiles) { this.percentiles = percentiles; }
+
     public void setMaxIncidentsInAGrid(int max) { this.maxIncidentsInAGrid = max; }
 
     public void setReportedIncidents(int reportedIncidents) {
@@ -108,10 +118,6 @@ public class ResponseJSON {
     }
 
     public String toString() {
-
-        Gson gson = new Gson();
-        gson.toJson(route.getGrids());
-        gson.toJsonTree(route.getGrids());
 
         JsonObject json = new JsonObject();
         json.addProperty("success", success);
@@ -123,8 +129,10 @@ public class ResponseJSON {
         json.addProperty("averageIncidentsPerGrid", averageIncidentsPerGrid);
         json.addProperty("maxIncidentsInAGrid", maxIncidentsInAGrid);
         json.addProperty("reportedIncidents", reportedIncidents);
-        json.add("grids", gson.toJsonTree(route.getGrids()));
+        json.add("grids", new Gson().toJsonTree(route.getGrids()));
         json.add("googleResponse", new Gson().fromJson(googleResponse.toString(), JsonElement.class));
+        json.add("percentiles", GridGenerator.getInstance().getPercentilesJson());
+
         return json.toString();
     }
 

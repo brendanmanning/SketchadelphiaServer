@@ -1,5 +1,7 @@
 package com.brendanmanning.PhillyDillyDilly;
 
+import com.google.gson.JsonObject;
+
 /**
  * PDD
  * Copyright 2018 Brendan Manning. All rights reserved.
@@ -33,5 +35,12 @@ public class Percentile {
      */
     public int getLowerBound() {
         return lowerBound;
+    }
+
+    public JsonObject toJson() {
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("percentile", percentile);
+        jsonObject.addProperty("lowerBound", lowerBound);
+        return jsonObject;
     }
 }
