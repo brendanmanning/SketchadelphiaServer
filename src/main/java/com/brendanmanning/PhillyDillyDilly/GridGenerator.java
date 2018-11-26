@@ -295,10 +295,10 @@ public class GridGenerator {
         System.out.println();
         for(int y = 0; y < grids.length; y++) {
             for(int x = 0; x < grids[y].length; x++) {
-                if(grids[y][x].numberOfIncidents() == 0)
-                    continue;
-                reportedIncidentsCount.add(grids[y][x].numberOfIncidents());
-                System.out.print(grids[y][x].numberOfIncidents() + ",");
+                if(grids[y][x].numberOfIncidents() != 0) {
+                    reportedIncidentsCount.add(grids[y][x].numberOfIncidents());
+                    System.out.print(grids[y][x].numberOfIncidents() + ",");
+                }
             }
         }
 
