@@ -298,17 +298,12 @@ public class GridGenerator {
                 if(grids[y][x].numberOfIncidents() == 0)
                     continue;
                 reportedIncidentsCount.add(grids[y][x].numberOfIncidents());
-                System.out.print(grids[y][x].numberOfIncidents()+",");
             }
         }
 
 
         Collections.sort(reportedIncidentsCount);
 
-        System.out.println("-----------------");
-        for(int i = 0; i < reportedIncidentsCount.size(); i++) {
-            System.out.print(reportedIncidentsCount.get(i) + ",");
-        }
 
         // Store each requested percentile offset in an array
         Percentile[] percentileObjects = new Percentile[percentiles.length];
@@ -325,9 +320,12 @@ public class GridGenerator {
                 index = (int) Math.ceil(indx);
             }
 
-            percentileObjects[p] = new Percentile(percentiles[p],  reportedIncidentsCount.get(index));
+            percentileObjects[p] = new Percentile(percentiles[p], reportedIncidentsCount.get(index));
 
         }
+
+        System.out.println("Reported Incidents Count: " + reportedIncidentsCount.size());
+        System.out.println(percentiles);
 
         return percentileObjects;
 
