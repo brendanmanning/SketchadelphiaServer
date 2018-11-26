@@ -49,6 +49,15 @@ public class Main {
         System.out.println("Generating grids...");
         grids = GridGenerator.getInstance().getGrids(incidents);
 
+        HashSet<Grid> gridHashSet = new HashSet<Grid>();
+        for(int y = 0; y < grids.length; y++) {
+            for(int x = 0; x < grids[y].length; x++) {
+                gridHashSet.add(grids[y][x]);
+            }
+        }
+
+        generateMap(gridHashSet, "ALLGRIDS");
+
        /* // Writing grids to file
         try {
             GridGenerator.getInstance().generateGridFiles(incidents, new File(System.getProperty("user.home") + File.separator + "sketchadelphia_data" + File.separator + "philadelphia"));
