@@ -51,7 +51,7 @@ public class Leg {
                 grids.add(grid);
                 reportedIncidents += grid.numberOfIncidents();
             } catch (GridNotContainsPointException gncpe) {
-                System.out.println("\t+ Block not contained in Grid");
+                //System.out.println("\t+ Block not contained in Grid ");
             }
         }
 
