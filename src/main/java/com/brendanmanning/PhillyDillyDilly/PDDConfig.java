@@ -13,16 +13,16 @@ public class PDDConfig {
     }
     private PDDConfig() {}
 
-    public File PhillyCrimeDataCsv = new File("/Users/Pharoah610/PDD/assets/PhillyCrimeDataIncidents.csv");
-    public File FullPhillyCrimeDataCsv = new File("/Users/Pharoah610/PDD/assets/FullPhillyCrimeDataIncidents.csv");
-    File MapViewTemplate = new File("/Users/Pharoah610/PDD/assets/MapViewTemple.html");
-    File MapViewOutputDirectory = new File("/Users/Pharoah610/Documents/PDDMaps/");
+    //public File PhillyCrimeDataCsv = new File("/Users/Pharoah610/PDD/assets/PhillyCrimeDataIncidents.csv");
+    //public File FullPhillyCrimeDataCsv = new File("/Users/Pharoah610/PDD/assets/FullPhillyCrimeDataIncidents.csv");
+    //File MapViewTemplate = new File("/Users/Pharoah610/PDD/assets/MapViewTemple.html");
+    //File MapViewOutputDirectory = new File("/Users/Pharoah610/Documents/PDDMaps/");
 
-    //public File PhillyCrimeDataCsv = new File("/root/PhillyCrimeDataIncidents.csv");
-    //public File FullPhillyCrimeDataCsv = new File("/root/FullPhillyCrimeDataIncidents.csv");
+    public File PhillyCrimeDataCsv = new File("/root/PhillyCrimeDataIncidents.csv");
+    public File FullPhillyCrimeDataCsv = new File("/root/FullPhillyCrimeDataIncidents.csv");
 
-//    File MapViewTemplate = new File("/root/MapViewTemple.html");
-//    File MapViewOutputDirectory = new File("/root/maps/");
+    File MapViewTemplate = new File("/root/MapViewTemple.html");
+    File MapViewOutputDirectory = new File("/root/maps/");
 
     public SimpleDateFormat PhillyCrimeDataDateFormat = new SimpleDateFormat("y-MM-dd HH:mm:ss");
 
