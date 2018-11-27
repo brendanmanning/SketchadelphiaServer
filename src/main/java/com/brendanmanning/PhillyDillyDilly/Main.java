@@ -279,6 +279,9 @@ public class Main {
     }
 
     public static void generateMap(HashSet<Grid> grids, String mapName) {
+
+        System.out.println("Generating " + mapName + "...");
+
         try {
             String template = FileUtils.readFileToString(PDDConfig.getInstance().MapViewTemplate);
 

@@ -21,7 +21,6 @@ public class Leg {
     private HashSet<Grid> grids = new HashSet<Grid>();
     private boolean hasMatchedGrids = false;
 
-    private int reportedIncidents = 0;
 
     public Leg(JsonObject legJson) {
         this.legJson = legJson;
@@ -49,7 +48,6 @@ public class Leg {
                 int[] index = GridGenerator.getInstance().getGridIndex(coordinates.get(i));
                 Grid grid = com.brendanmanning.PhillyDillyDilly.Main.getGrids()[index[0]][index[1]];
                 grids.add(grid);
-                reportedIncidents += grid.numberOfIncidents();
             } catch (GridNotContainsPointException gncpe) {
                 System.out.println("\t+ Block not contained in Grid " + coordinates.get(i));
             }
@@ -59,10 +57,6 @@ public class Leg {
 
     public HashSet<Grid> gridsCrossed() {
         return grids;
-    }
-
-    public int numberOfIncidents() {
-        return reportedIncidents;
     }
 
 }

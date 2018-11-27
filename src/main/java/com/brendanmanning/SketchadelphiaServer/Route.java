@@ -32,15 +32,16 @@ public class Route {
     }
 
     public int numberOfIncidents() {
+        Grid[] gridss = getGrids();
         int reportedIncidents = 0;
-        for(int i = 0; i < legs.length; i++) {
-            reportedIncidents += legs[i].numberOfIncidents();
+        for(int i = 0; i < gridss.length; i++) {
+            reportedIncidents += gridss[i].numberOfIncidents();
         }
         return reportedIncidents;
     }
 
     public Grid[] getGrids() {
-        return grids.toArray(new Grid[]{});
+        return this.grids.toArray(new Grid[]{});
     }
 
     // Used only for testing

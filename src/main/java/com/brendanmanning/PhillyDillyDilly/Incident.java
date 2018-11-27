@@ -84,6 +84,14 @@ public class Incident
         return Main.distance(this.coordinates, to);
     }
 
+    /**
+     * Returns true if this is a violent crime
+     * @return
+     */
+    public boolean isViolentCrime() {
+    return false;
+    }
+
     public JsonObject toJson() {
         JsonObject jsonObject = new JsonObject();
         jsonObject.add("coordinates", coordinates.toJson());
