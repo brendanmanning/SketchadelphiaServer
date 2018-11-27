@@ -46,17 +46,18 @@ public class Main {
 
 
         // Generate the grids
-        System.out.println("Generating grids...");
+        System.out.print("Generating grids...");
         grids = GridGenerator.getInstance().getGrids(incidents);
+        System.out.println(" done.");
 
-        HashSet<Grid> gridHashSet = new HashSet<Grid>();
+        /*HashSet<Grid> gridHashSet = new HashSet<Grid>();
         for(int y = 0; y < grids.length; y++) {
             for(int x = 0; x < grids[y].length; x++) {
                 gridHashSet.add(grids[y][x]);
             }
-        }
+        }*/
 
-        generateMap(gridHashSet, "ALLGRIDS");
+        //generateMap(gridHashSet, "ALLGRIDS");
 
        /* // Writing grids to file
         try {
